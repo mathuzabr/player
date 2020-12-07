@@ -1,0 +1,290 @@
+<html>
+    <head>
+
+    </head>
+
+    <body oncontextmenu="return false">
+        <script type="text/javascript">
+            //desabilita menu de opções após clicar no botão direito
+            function desabilitaMenu(e)
+            {
+            if (window.Event)
+            {
+            if (e.which == 2 || e.which == 3)
+            return false;
+            }
+            else
+            {
+            event.cancelBubble = true
+            event.returnValue = false;
+            return false;
+            }
+            }
+            
+            //desabilita botão direito
+            function desabilitaBotaoDireito(e)
+            {
+            if (window.Event)
+            {
+            if (e.which == 2 || e.which == 3)
+            return false;
+            }
+            else
+            if (event.button == 2 || event.button == 3)
+            {
+            event.cancelBubble = true
+            event.returnValue = false;
+            return false;
+            }
+            }
+            
+            //desabilita botão direito do mouse
+            if ( window.Event )
+            document.captureEvents(Event.MOUSEUP);
+            if ( document.layers )
+            document.captureEvents(Event.MOUSEDOWN);
+            
+            document.oncontextmenu = desabilitaMenu;
+            document.onmousedown = desabilitaBotaoDireito;
+            document.onmouseup = desabilitaBotaoDireito;
+            </script>
+            <style>
+            @import url(https://fonts.googleapis.com/css?family=Open+Sans:700italic);
+            
+            body{
+            background-image: url('https://i.imgur.com/1P7OsSQ.jpg');
+            background-color: #363636;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            }
+            
+            
+            .itens {
+                float: center;
+                width: 100%;
+                margin: 1px 0;
+                list-style: none;
+                text-align: center;
+                position:relative;
+            }
+            .itens a {
+                color: #fff;
+                cursor: pointer;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                background-color: #eb0101;
+                padding: 10px 14px 10px 40px;
+                border-bottom: 3px solid #a20000;
+                font: 18px arial, verdana, tahoma;
+                text-decoration: bold;
+                border-radius: 6px;
+                -moz-border-radius: 6px;
+                -webkit-border-radius: 6px;
+                display: inline-block;
+            }
+            .itens a:hover {
+                background-color: #a20000;
+                border-bottom: 3px solid #eb0101
+            }
+            .itens a .icon {
+                background-color: #fff;
+                margin-left: -28px;
+                margin-top: 0px
+            }
+            .itens a .icon .symbol {
+                border-left: 9px solid #eb0101
+            }
+            .icon {
+                float: left;
+                position: absolute;
+                margin-left: -7px;
+                margin-top: -3px;
+                width: 20px;
+                height: 20px;
+                background-color: #eb0101;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px
+            }
+            .icon .symbol {
+                float: left;
+                position: absolute;
+                width: 0;
+                height: 0;
+                margin: 4px 0 0 -3px;
+                border-top: 6px solid transparent;
+                border-left: 9px solid #fff;
+                border-bottom: 7px solid transparent
+            }
+            
+            .botao {
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+                background-color: rgba(214, 7, 0, 0.87);
+                -moz-border-radius:6px;
+                -webkit-border-radius:6px;
+                border: 1px solid black;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Trebuchet MS;
+                font-size:13px;
+                font-weight:bold;
+                padding:8px 24px;
+                text-decoration:none;
+                text-shadow:0px 0px 2px #154682;
+                box-shadow: 1px 1px 4px black;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+            }
+            .botao:hover {
+                background-color: rgba(255, 191, 0, 0.9);
+            }
+            .botao:active {
+                position:relative;
+                top:1px;
+            }
+            
+            .title {margin: 20px; color: #FFF; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; text-shadow: 2px 4px 3px #000;}
+
+            .title2 {margin: 20px; color: rgb(0, 140, 255); font-family: 'Open Sans', sans-serif; font-size: 32px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; text-shadow: 2px 4px 3px #000;}
+            
+             /* 
+            Modifica altura e posicao dos botoes
+            ***********************************************************/
+            .geral {width: 100%; padding-top: 5%;}
+            
+            .footer {position:fixed; width:100%; background-color:#000; padding:10px; margin-left:-28px; bottom:0px; display:block;}
+            
+            /* 
+            1200px – Desktops, notebooks com monitores widescreen
+            ***********************************************************/
+            @media screen and (max-width:1200px){
+                  
+            }
+            /* 
+            960px – Tablets no formato paisagem e alguns monitores mais antigos
+            ***********************************************************/
+            @media screen and (max-width:960px){
+                  
+            }
+            /* 
+            768px – Tablets no formato retrato, como o iPad
+            ***********************************************************/
+            @media screen and (max-width:768px){
+            }
+            /* 
+            480px – Smartphones no formato paisagem com tela pequena
+            ***********************************************************/
+            @media screen and (max-width:480px){
+                
+            .geral {width: 100%; padding-top: 8%;}
+            .title {margin: 20px; color: #FFF; font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; text-shadow: 2px 4px 3px #000;}  
+            .itens a {
+                padding: 5px 14px 5px 40px;
+               font: 16px arial, verdana, tahoma;
+            } 
+            .footer {display:none;}
+            }
+            /* 
+            320px – Smartphones no formato retrato com tela pequena
+            ***********************************************************/
+            @media screen and (max-width:320px){
+            .geral {width: 100%; padding-top: 8%;}   
+            .title {margin: 20px; color: #FFF; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; text-shadow: 2px 4px 3px #000;}
+        
+
+            .itens a {
+                padding: 5px 14px 5px 40px;
+                font: 16px arial, verdana, tahoma;
+               
+            }
+            .footer {display:none;}
+            
+        </style>
+        <div class="geral">
+<center>
+<div class="itens"> 
+<div class="title2">EVENTOS ESPORTIVOS - 05/12/2020</div><br>
+
+
+
+<div class="title">06:00 | WRC: Italy Rally - Super Special 15 - Serraglio 1 | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv5.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">07:00 | European Tour: South Africa - Open 4th Day | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">08:00 | WRC: Italy Rally - Power Stage | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv5.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">08:15 | Vilafranquense x Estoril | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">08:30 | Hellas Verona x Cagliari | <a onclick="location.href='https://sportzonline.co/channels/hd/hd8.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">08:30 | Hellas Verona x Cagliari | <a onclick="location.href='https://sportzonline.co/channels/hd/hd7.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">08:30 | Hellas Verona x Cagliari | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">09:00 | West Bromwich Albion x Crystal Palace | <a onclick="location.href='https://sportzonline.co/channels/hd/hd1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">09:00 | West Bromwich Albion x Crystal Palace | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">09:00 | Lille x Monaco | <a onclick="location.href='https://sportzonline.co/channels/hd/hd4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">09:30 | Paderborn x Nurnberg | <a onclick="location.href='https://sportzonline.co/channels/hd/hd3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">10:00 | Granada x Huesca | <a onclick="location.href='https://sportzonline.co/channels/hd/hd6.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">11:00 | Roma x Sassuolo | <a onclick="location.href='https://sportzonline.co/channels/hd/hd8.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">11:00 | Roma x Sassuolo | <a onclick="location.href='https://sportzonline.co/channels/hd/hd7.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">11:00 | Roma x Sassuolo | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">11:00 | Autumn Nations Cup: England x France - Final | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv5.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">11:00 | Bordeaux x Brest | <a onclick="location.href='https://sportzonline.co/channels/hd/hd4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">11:15 | Sheffield United x Leicester City | <a onclick="location.href='https://sportzonline.co/channels/hd/hd1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">11:15 | Sheffield United x Leicester City | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">11:30 | Werder Bremen x Stuttgart | <a onclick="location.href='https://sportzonline.co/channels/hd/hd3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">12:00 | ATP Challenger Tour: Maia Open - Final | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">12:00 | Nacional x Santa Clara | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">12:15 | Osasuna x Real Betis | <a onclick="location.href='https://sportzonline.co/channels/hd/hd5.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">12:15 | Osasuna x Real Betis | <a onclick="location.href='https://sportzonline.co/channels/hd/hd6.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">12:30 | Grand Prix Sunday: Sakhir | <a onclick="location.href='https://sportzonline.co/channels/hd/hd2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">13:00 | Reims x Nice | <a onclick="location.href='https://sportzonline.co/channels/hd/hd4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">13:30 | Tottenham Hotspur x Arsenal | <a onclick="location.href='https://sportzonline.co/channels/hd/hd1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">13:30 | Tottenham Hotspur x Arsenal | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">13:30 | Tottenham Hotspur x Arsenal | <a onclick="location.href='https://sportzonline.co/channels/bra/br2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:00 | Crotone x Napoli | <a onclick="location.href='https://sportzonline.co/channels/hd/hd8.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:00 | Crotone x Napoli | <a onclick="location.href='https://sportzonline.co/channels/hd/hd7.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:00 | Crotone x Napoli | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:00 | Schalke 04 x Bayer Leverkusen | <a onclick="location.href='https://sportzonline.co/channels/hd/hd3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:05 | Sakhir F1 Grande Prix | <a onclick="location.href='https://sportzonline.co/channels/hd/hd2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:15 | Croatia Women x Netherlands Women | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv5.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:30 | Rio Ave x Boavista | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:30 | Villarreal x Elche | <a onclick="location.href='https://sportzonline.co/channels/hd/hd5.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">14:30 | Villarreal x Elche | <a onclick="location.href='https://sportzonline.co/channels/hd/hd6.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">15:00 | LPGA: Volunteers of America Classic - 4th Day | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:00 | NFL: Browns @ Titans | <a onclick="location.href='https://sportzonline.co/channels/hd/hd1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:00 | Sao Paulo x Sport | <a onclick="location.href='https://sportzonline.co/channels/bra/br1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:00 | Gremio x Vasco | <a onclick="location.href='https://sportzonline.co/channels/bra/br3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:15 | Liverpool x Wolverhampton Wanderers | <a onclick="location.href='https://sportzonline.co/channels/hd/hd2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:15 | Liverpool x Wolverhampton Wanderers | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:15 | Liverpool x Wolverhampton Wanderers | <a onclick="location.href='https://sportzonline.co/channels/bra/br2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:45 | Sampdoria x Milan | <a onclick="location.href='https://sportzonline.co/channels/hd/hd8.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:45 | Sampdoria x Milan | <a onclick="location.href='https://sportzonline.co/channels/hd/hd7.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">16:45 | Sampdoria x Milan | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">17:00 | Benfica x P. Ferreira | <a onclick="location.href='https://sportzonline.co/channels/pt/btv.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">17:00 | Benfica x P. Ferreira | <a onclick="location.href='https://sportzonline.co/channels/hd/hd3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">17:00 | Benfica x P Ferreira | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">17:00 | Metz x Olympique Lyonnais | <a onclick="location.href='https://sportzonline.co/channels/hd/hd4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">17:00 | Deportivo Alaves x Real Sociedad | <a onclick="location.href='https://sportzonline.co/channels/hd/hd5.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">17:00 | Deportivo Alaves x Real Sociedad | <a onclick="location.href='https://sportzonline.co/channels/hd/hd6.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">17:00 | Belenenses SAD x Braga | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">17:10 | Columbus Crew x New England Revolution - Final | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv5.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">18:00 | NFL: Rams @ Cardinals | <a onclick="location.href='https://sportzonline.co/channels/hd/hd1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">18:15 | Figueirense x Nautico | <a onclick="location.href='https://sportzonline.co/channels/bra/br1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">18:15 | Atletico/MG x Internacional | <a onclick="location.href='https://sportzonline.co/channels/bra/br4.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">19:20 | Talleres Cordoba x Boca Juniors | <a onclick="location.href='https://sportzonline.co/channels/hd/hd3.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">19:20 | Tallares x Boca Juniors | <a onclick="location.href='https://sportzonline.co/channels/pt/sporttv2.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+<div class="title">22:10 | NFL: Broncos @ Chiefs | <a onclick="location.href='https://sportzonline.co/channels/hd/hd1.php';" id="1"><span class="icon"><span class="symbol"></span></span>ASSISTIR</a><p></p></div>
+
+
+</div>
+</div>
+<div class="footer">
+<center>
+<div style="color: #FFF; font-family: Verdana,Geneva,sans-serif; font-size: 10px; margin: 0 auto; padding: 0px 10px 0px 20px;">
+<strong>
+<span style="color: #F00;">AVISO:</span> Alguns eventos possui mais de uma opcao de PLAYER, escolha a que melhor lhe sirva!</strong>
+</div>
+</center>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>

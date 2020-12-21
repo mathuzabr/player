@@ -1,27 +1,42 @@
 
-
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset=utf-8 />
-<title>PLAYER</title>
-<link href="video-js-live.css" rel="stylesheet">
-<script src="https://unpkg.com/video.js/dist/video.js" type="958de98c1351624e37b286cd-text/javascript"></script>
-<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js" type="958de98c1351624e37b286cd-text/javascript"></script>
-<style type="text/css">
-body {background-color: #171717; font-family: Tahoma,Arial;}
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" charset="utf-8" src="http://app.kshost.com.br/playercast/player.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="http://app.kshost.com.br/playercast/level-selector.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="http://app.kshost.com.br/playercast/plugin.js"></script>
+ <link rel="stylesheet" href="http://app.kshost.com.br/playercast/bootstrap.min.css">
+  <title>Player</title>
+<style>
+*{margin:0;}
+html, body{
+  height: 100%;
+}
 </style>
 </head>
 <body>
-<Script Language='Javascript'>
-<!--Criptografar HTML Codificador by https://criptografarphp.com.br/encoder-html/-->
-<!--
-document.write(unescape('%3C%76%69%64%65%6F%20%69%64%3D%22%6D%79%5F%76%69%64%65%6F%5F%31%22%20%63%6C%61%73%73%3D%22%76%69%64%65%6F%2D%6A%73%20%76%6A%73%2D%66%6C%75%69%64%20%76%6A%73%2D%64%65%66%61%75%6C%74%2D%73%6B%69%6E%22%20%63%6F%6E%74%72%6F%6C%73%20%70%72%65%6C%6F%61%64%3D%22%61%75%74%6F%22%20%64%61%74%61%2D%73%65%74%75%70%3D%27%7B%7D%27%3E%0A%3C%73%6F%75%72%63%65%20%73%72%63%3D%22%68%74%74%70%73%3A%2F%2F%6F%72%69%67%69%6E%2D%30%32%2E%6E%78%70%6C%61%79%2E%63%6F%6D%2E%62%72%2F%4E%4F%56%4F%5F%54%45%4D%50%4F%5F%48%44%5F%50%46%5A%2F%74%72%61%63%6B%73%2D%76%31%61%31%2F%6D%6F%6E%6F%2E%6D%33%75%38%3F%73%64%3D%31%30%26%72%65%62%61%73%65%3D%6F%6E%0A%22%20%74%79%70%65%3D%22%61%70%70%6C%69%63%61%74%69%6F%6E%2F%78%2D%6D%70%65%67%55%52%4C%22%3E%0A%3C%2F%76%69%64%65%6F%3E'));
-//-->
-</Script>
-<script type="958de98c1351624e37b286cd-text/javascript">
-    var player = videojs('my_video_1');
-    player.play();
-    </script>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="958de98c1351624e37b286cd-|49" defer=""></script></body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="embed-responsive embed-responsive-16by9">
+            <div id="player" class="embed-responsive-item"></div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" charset="utf-8">
+    window.onload = function() {
+        var player = new Clappr.Player({
+            source: 'https://origin-02.nxplay.com.br/FUTURA_NX/tracks-v1a1/mono.m3u8?sd=10&rebase=on',
+            parentId: '#player',
+            plugins: {
+                        'container': [PlayerCast]
+            },            height: '100%',
+            width: '100%',
+            mute: false,
+            hideMediaControl: true,
+                        autoPlay: false        });
+    }
+  </script>
+</div>
+</body>
 </html>

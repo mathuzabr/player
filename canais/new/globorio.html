@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" charset="utf-8" src="./player.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./level-selector.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="./plugin.js"></script>
+ <link rel="stylesheet" href="./bootstrap.min.css">
+  <title>Player</title>
+<style>
+*{margin:0;}
+html, body{
+  height: 100%;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="embed-responsive embed-responsive-16by9">
+            <div id="player" class="embed-responsive-item"></div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" charset="utf-8">
+    window.onload = function() {
+        var player = new Clappr.Player({
+            source: 'https://live.video.globo.com/h/1402196682759012345678915746027599876543210hM4EA1neMoQoIiUyVn1TNg/k/app/a/A/u/anyone/d/s/hls-globo-rj/playlist.m3u8',
+            parentId: '#player',
+            plugins: {
+                        'container': [PlayerCast]
+            },            height: '100%',
+            width: '100%',
+            mute: false,
+            hideMediaControl: true,
+                        autoPlay: false        });
+    }
+  </script>
+</div>
+</body>
+</html>
